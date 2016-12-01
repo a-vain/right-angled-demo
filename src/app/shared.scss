@@ -1,10 +1,10 @@
 /*variables*/
 $color-blue: #039be5;
+$color-hover-blue: #06abfc;
 $color-light-blue: #4fc3f7;
 $color-btn-primary-focus: #67cbf8;
 $color-btn-primary-active: #80d4f9;
 $color-selected: #ccedfd;
-$color-yellow: #ffd600;
 $color-black: #212121;
 $color-gray: #eeeeee;
 $color-dark-grey: #5C707A;
@@ -15,6 +15,7 @@ $color-striped: #fcfcfc;
 $color-white: #fff;
 
 $font-medium: 14px;
+$font-small: 12px;
 $indent-unit: 8px;
 
 /*variables*/
@@ -61,15 +62,15 @@ $indent-unit: 8px;
 }
 
 @mixin icon-reset() {
-    background-image: url('../assets/images/reset.png');
+    background-image: url('./assets/images/reset.png');
 }
 
 @mixin icon-load() {
-    background-image: url('../assets/images/load.png');
+    background-image: url('./assets/images/load.png');
 }
 
 @mixin icon-cancel() {
-    background-image: url('../assets/images/cancel.png');
+    background-image: url('./assets/images/cancel.png');
 }
 
 /* mixins */

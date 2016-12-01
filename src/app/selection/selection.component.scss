@@ -1,0 +1,36 @@
+@import '../shared.scss';
+
+:host /deep/ {
+
+div[rtSelectionArea]
+{
+  div[rtSelectionArea]{
+    padding: 0 15px;
+  }
+}
+form {
+   margin: 15px;
+}
+    .row {
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+
+    [class*=col-] {
+        padding-right: 1px;
+        padding-left: 1px;
+    }
+
+    .item {
+        background-color: rebeccapurple;
+        padding: 25px;
+        color: $color-white;
+        text-align: center;
+        cursor: pointer;
+        margin: 1px 0;
+    }
+
+    .item.selected {
+        background-color: $color-blue !important;
+    }
+}

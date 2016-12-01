@@ -1,0 +1,58 @@
+<div class="toolbar">
+	<ul>
+		<li>
+			<button (click)="list.loadData()" [disabled]="list.busy" type="button" class="btn btn-primary">Load data</button>
+		</li>
+		<li>
+			<button (click)="list.cancelRequests()" [disabled]="list.ready" type="button" class="btn btn-primary">Cancel loading</button>
+		</li>
+		<li>
+			<button type="button" class="btn btn-primary" (click)="raiseErrorOnLoad()">Raise error on load</button>
+		</li>
+		<li>
+			<button type="button" class="btn btn-primary" (click)="loadEmptyData()">Load empty list</button>
+		</li>
+	</ul>
+</div>
+<div class="table-responsive">
+	<table class="table table-striped" [rtList]="loadData" [loadOnInit]="false" #list="rtList">
+		<thead>
+			<tr>
+				<th><span rtSort="iataCode">IATA</span></th>
+				<th><span rtSort="name">Airport name</span></th>
+				<th><span rtSort="countryName">Country</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let airport of list.items">
+				<td>{{airport.iataCode}}</td>
+				<td>{{airport.name}}</td>
+				<td>{{airport.countryName}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">
+					<rt-list-state-initial>
+            Nothing happened. Press any button at the top
+					</rt-list-state-initial>
+					<rt-list-state-progress>
+						Loading data...
+					</rt-list-state-progress>
+					<rt-list-state-no-data>
+						Data not found
+					</rt-list-state-no-data>
+					<rt-list-state-request-cancelled>
+						Request cancelled
+					</rt-list-state-request-cancelled>
+					<rt-list-state-failed>
+            Data request finished with error
+					</rt-list-state-failed>
+					<rt-list-state-done>
+						Data loaded successfully
+					</rt-list-state-done>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>

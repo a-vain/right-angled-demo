@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Tab } from './tab-base';
 import { TabSectionComponent } from './tab-section.component';
@@ -12,8 +12,10 @@ import { TabSectionComponent } from './tab-section.component';
   `
 })
 export class SampleTabComponent extends Tab {
-  @Input() public tabTitle: string;
-  constructor(tabs: TabSectionComponent) {
-    super(tabs);
+  public isActive: boolean;
+  public tabTitle: string = 'Live demo';
+  constructor(tabSection: TabSectionComponent) {
+    super();
+    tabSection.addTab(this);
   }
 }
